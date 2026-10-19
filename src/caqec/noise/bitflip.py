@@ -12,11 +12,16 @@ def build_bitflip_noise_model(p: float) -> NoiseModel:
     return noise_model
 
 
-def add_noise_slot(circuit: QuantumCircuit) -> QuantumCircuit:
-    """Return a copy with one 'id' gate per qubit: the places where noise acts."""
+def add_noise_slot(circuit: QuantumCircuit, qubits=None) -> QuantumCircuit:
+    """Return a copy with one 'id' gate per chosen qubit (default: all qubits).
+
+    These 'id' gates are the only places where the noise model acts.
+    """
+    if qubits is None:
+        qubits = range(circuit.num_qubits)
     out = circuit.copy()
     out.barrier()
-    for q in range(out.num_qubits):
+    for q in qubits:
         out.id(q)
     out.barrier()
     return out
