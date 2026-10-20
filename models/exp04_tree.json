@@ -1,0 +1,26 @@
+{
+  "kind": "tree",
+  "feature_set": "raw",
+  "params": {
+    "max_depth": 5,
+    "min_samples_leaf": 50,
+    "class_weight": null
+  },
+  "rounds": 3,
+  "feature_names": [
+    "s1_r1",
+    "s2_r1",
+    "s1_r2",
+    "s2_r2",
+    "s1_r3",
+    "s2_r3",
+    "s1_final",
+    "s2_final"
+  ],
+  "sklearn_version": "1.9.1",
+  "numpy_version": "2.5.4",
+  "sha256": "e0f26e86370e23aebb08290e78e6bf9fd46843033b44787e04aa68101853c860",
+  "seed": 0,
+  "n_train": 60000,
+  "train_y1_fraction": 0.07053333333333334
+}
