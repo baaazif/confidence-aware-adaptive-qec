@@ -1,0 +1,2475 @@
+{
+  "config": {
+    "trials": 60,
+    "T": 6000,
+    "eval_seed": 20261040,
+    "sens_seed": 20261041,
+    "model_sha256": {
+      "logreg": "cc24d16e9eadb20d1277107e04de7ff44a6a6ef679f1946901556081f11efff3",
+      "tree": "e0f26e86370e23aebb08290e78e6bf9fd46843033b44787e04aa68101853c860"
+    },
+    "headline_controller": {
+      "name": "proposed",
+      "evidence_shots": 300,
+      "horizon": 3000,
+      "margin": 0.0,
+      "dwell": 1000,
+      "use_guard": true,
+      "max_waits": 1,
+      "estimate_q": true,
+      "cost_aware": true,
+      "robust_ci": true,
+      "allow_update": true,
+      "initial_decision": true,
+      "z": 2.0,
+      "detector": [
+        500,
+        100,
+        3.5
+      ]
+    },
+    "assumed_costs": {
+      "c_fail": 1.0,
+      "switch_cost": 5.0,
+      "update_cost": 40.0,
+      "update_delay": 200,
+      "monitor_cost_per_shot": 0.001,
+      "decode_cost_per_shot": {
+        "lookup": 0.0,
+        "minweight": 0.0005,
+        "tree": 0.002,
+        "updated": 0.0005
+      }
+    },
+    "detector_calibration": "stage 8 (window z=3.5, 500/100 shots)"
+  },
+  "confidence_validation_exact": [
+    {
+      "p": 0.005,
+      "q": 0.05,
+      "actual": 0.0018452104521578764,
+      "self_estimated": 0.011497679239043514
+    },
+    {
+      "p": 0.01,
+      "q": 0.05,
+      "actual": 0.004359081891787226,
+      "self_estimated": 0.01653079947049122
+    },
+    {
+      "p": 0.02,
+      "q": 0.05,
+      "actual": 0.011232249485066233,
+      "self_estimated": 0.026496967700286457
+    },
+    {
+      "p": 0.05,
+      "q": 0.05,
+      "actual": 0.043978396434687476,
+      "self_estimated": 0.055347483152643366
+    },
+    {
+      "p": 0.1,
+      "q": 0.05,
+      "actual": 0.12423003903999999,
+      "self_estimated": 0.09870212762732866
+    },
+    {
+      "p": 0.2,
+      "q": 0.05,
+      "actual": 0.30412470272000003,
+      "self_estimated": 0.1633778055226683
+    },
+    {
+      "p": 0.005,
+      "q": 0.15,
+      "actual": 0.0046820828490211335,
+      "self_estimated": 0.027422555356687004
+    },
+    {
+      "p": 0.01,
+      "q": 0.15,
+      "actual": 0.009852775246820185,
+      "self_estimated": 0.03381422589499498
+    },
+    {
+      "p": 0.02,
+      "q": 0.15,
+      "actual": 0.021521511590789112,
+      "self_estimated": 0.046092565249049436
+    },
+    {
+      "p": 0.05,
+      "q": 0.15,
+      "actual": 0.06489963938468747,
+      "self_estimated": 0.07912650286205412
+    },
+    {
+      "p": 0.1,
+      "q": 0.15,
+      "actual": 0.15283051264000003,
+      "self_estimated": 0.12300646537784174
+    },
+    {
+      "p": 0.2,
+      "q": 0.15,
+      "actual": 0.3265137075200001,
+      "self_estimated": 0.17864291721498385
+    }
+  ],
+  "estimator_validation": [
+    {
+      "p": 0.02,
+      "q": 0.05,
+      "q_assumed_fixed": false,
+      "p_hat_mean": 0.020756453164336327,
+      "p_hat_sd": 0.008857901271724958,
+      "q_hat_mean": 0.04900833333333333,
+      "p_ci_coverage": 1.0,
+      "guard_consistent": 1.0
+    },
+    {
+      "p": 0.05,
+      "q": 0.05,
+      "q_assumed_fixed": false,
+      "p_hat_mean": 0.04976862811707665,
+      "p_hat_sd": 0.009426707321078894,
+      "q_hat_mean": 0.05109166666666667,
+      "p_ci_coverage": 1.0,
+      "guard_consistent": 1.0
+    },
+    {
+      "p": 0.1,
+      "q": 0.05,
+      "q_assumed_fixed": false,
+      "p_hat_mean": 0.10023463246535719,
+      "p_hat_sd": 0.010347121622095319,
+      "q_hat_mean": 0.049216666666666666,
+      "p_ci_coverage": 1.0,
+      "guard_consistent": 1.0
+    },
+    {
+      "p": 0.02,
+      "q": 0.15,
+      "q_assumed_fixed": false,
+      "p_hat_mean": 0.020954140045456763,
+      "p_hat_sd": 0.01534253918457604,
+      "q_hat_mean": 0.15080833333333332,
+      "p_ci_coverage": 1.0,
+      "guard_consistent": 1.0
+    },
+    {
+      "p": 0.02,
+      "q": 0.15,
+      "q_assumed_fixed": true,
+      "p_hat_mean": 0.13405829623102028,
+      "p_hat_sd": 0.011896342343068682,
+      "q_hat_mean": 0.05,
+      "p_ci_coverage": 0.0,
+      "guard_consistent": 0.0
+    }
+  ],
+  "measured_inference_us_per_shot": {
+    "lookup": 0.09043400000336987,
+    "minweight": 0.11288499999864143,
+    "tree": 0.2928090000023076,
+    "logreg": 0.4430729999967298
+  },
+  "measured_controller_overhead_us_per_shot": {
+    "adaptive_baseline": 1.1240612698444121,
+    "proposed": 1.4383131746070728,
+    "abl_no_guard": 1.460604126983194,
+    "abl_no_dwell": 1.3890419841273467,
+    "abl_cost_blind": 1.4823930158764407,
+    "abl_no_update": 1.2474119841257678,
+    "abl_nominal_q": 1.306009920638947
+  },
+  "scenarios": {
+    "stationary p=0.02": {
+      "methods": {
+        "fixed_lookup": {
+          "cost": [
+            57.55,
+            55.460831817316205,
+            59.63916818268379
+          ],
+          "failures_per_stream": 57.55,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.009591666666666667,
+            0.009278468812492098,
+            0.009915330812783897
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "fixed_minweight": {
+          "cost": [
+            52.9,
+            51.00963023971,
+            54.79036976029
+          ],
+          "failures_per_stream": 49.9,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.008316666666666667,
+            0.008025203837640748,
+            0.00861862299867821
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "static_tree": {
+          "cost": [
+            79.35,
+            77.47216195570836,
+            81.22783804429163
+          ],
+          "failures_per_stream": 67.35,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.011225,
+            0.010886028855516594,
+            0.011574402577835086
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "adaptive_baseline": {
+          "cost": [
+            65.46666666666667,
+            63.68129320265093,
+            67.25204013068242
+          ],
+          "failures_per_stream": 50.71666666666667,
+          "switches": 1.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.008452777777777778,
+            0.008158916666684116,
+            0.00875712948697448
+          ],
+          "false_alarms_per_stream": 0.4666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "proposed": {
+          "cost": [
+            83.15,
+            80.75191645261073,
+            85.54808354738928
+          ],
+          "failures_per_stream": 65.66666666666667,
+          "switches": 0.11666666666666667,
+          "updates": 0.0,
+          "pre_failure": [
+            0.010944444444444444,
+            0.010609755534941536,
+            0.01128957077491415
+          ],
+          "false_alarms_per_stream": 0.4666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_no_guard": {
+          "cost": [
+            83.15,
+            80.75191645261073,
+            85.54808354738928
+          ],
+          "failures_per_stream": 65.66666666666667,
+          "switches": 0.11666666666666667,
+          "updates": 0.0,
+          "pre_failure": [
+            0.010944444444444444,
+            0.010609755534941536,
+            0.01128957077491415
+          ],
+          "false_alarms_per_stream": 0.4666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_no_dwell": {
+          "cost": [
+            83.15,
+            80.75191645261073,
+            85.54808354738928
+          ],
+          "failures_per_stream": 65.66666666666667,
+          "switches": 0.11666666666666667,
+          "updates": 0.0,
+          "pre_failure": [
+            0.010944444444444444,
+            0.010609755534941536,
+            0.01128957077491415
+          ],
+          "false_alarms_per_stream": 0.4666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_cost_blind": {
+          "cost": [
+            85.23656666666666,
+            82.60872847665017,
+            87.86440485668315
+          ],
+          "failures_per_stream": 65.31666666666666,
+          "switches": 0.06666666666666667,
+          "updates": 0.06666666666666667,
+          "pre_failure": [
+            0.01088611111111111,
+            0.010552319661416723,
+            0.011230341226721974
+          ],
+          "false_alarms_per_stream": 0.4666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_no_update": {
+          "cost": [
+            83.15,
+            80.75191645261073,
+            85.54808354738928
+          ],
+          "failures_per_stream": 65.66666666666667,
+          "switches": 0.11666666666666667,
+          "updates": 0.0,
+          "pre_failure": [
+            0.010944444444444444,
+            0.010609755534941536,
+            0.01128957077491415
+          ],
+          "false_alarms_per_stream": 0.4666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_nominal_q": {
+          "cost": [
+            65.9875,
+            64.15114506473822,
+            67.82385493526178
+          ],
+          "failures_per_stream": 51.46666666666667,
+          "switches": 1.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.008577777777777778,
+            0.008281731536298133,
+            0.008884311949611154
+          ],
+          "false_alarms_per_stream": 0.4666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        }
+      },
+      "cost_minus_proposed": {
+        "fixed_lookup": {
+          "diff": -25.6,
+          "ci_low": -27.903355482100757,
+          "ci_high": -23.296644517899246,
+          "wilcoxon_p": 1.6054267388286186e-11
+        },
+        "fixed_minweight": {
+          "diff": -30.25,
+          "ci_low": -32.351892855377784,
+          "ci_high": -28.148107144622216,
+          "wilcoxon_p": 1.5923580696087142e-11
+        },
+        "static_tree": {
+          "diff": -3.8,
+          "ci_low": -5.537264125535456,
+          "ci_high": -2.062735874464544,
+          "wilcoxon_p": 4.952610699249712e-07
+        },
+        "adaptive_baseline": {
+          "diff": -17.683333333333334,
+          "ci_low": -19.731807228119266,
+          "ci_high": -15.634859438547402,
+          "wilcoxon_p": 7.365916027333157e-11
+        },
+        "abl_no_guard": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_no_dwell": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_cost_blind": {
+          "diff": 2.086566666666667,
+          "ci_low": 0.16964098212435252,
+          "ci_high": 4.0034923512089815,
+          "wilcoxon_p": 0.04966953589289581
+        },
+        "abl_no_update": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_nominal_q": {
+          "diff": -17.1625,
+          "ci_low": -19.29633057038765,
+          "ci_high": -15.028669429612354,
+          "wilcoxon_p": 1.0828332769749467e-10
+        }
+      }
+    },
+    "stationary p=0.10": {
+      "methods": {
+        "fixed_lookup": {
+          "cost": [
+            901.4833333333333,
+            894.4513233032977,
+            908.515343363369
+          ],
+          "failures_per_stream": 901.4833333333333,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.15024722222222223,
+            0.14908373033272102,
+            0.15141817853357595
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "fixed_minweight": {
+          "cost": [
+            792.45,
+            785.7798868125701,
+            799.12011318743
+          ],
+          "failures_per_stream": 789.45,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.131575,
+            0.13047470511726914,
+            0.13268315780704695
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "static_tree": {
+          "cost": [
+            756.45,
+            750.4508918113401,
+            762.44910818866
+          ],
+          "failures_per_stream": 744.45,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.124075,
+            0.12300209725456254,
+            0.12515592573471213
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "adaptive_baseline": {
+          "cost": [
+            763.0537666666665,
+            757.2818863726452,
+            768.8256469606879
+          ],
+          "failures_per_stream": 745.0333333333333,
+          "switches": 0.016666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.12417222222222223,
+            0.12309895639908358,
+            0.1252535089597194
+          ],
+          "false_alarms_per_stream": 0.43333333333333335,
+          "unnecessary_actions_per_stream": 0.016666666666666666,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "proposed": {
+          "cost": [
+            762.45,
+            756.4508918113401,
+            768.44910818866
+          ],
+          "failures_per_stream": 744.45,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.124075,
+            0.12300209725456254,
+            0.12515592573471213
+          ],
+          "false_alarms_per_stream": 0.43333333333333335,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_no_guard": {
+          "cost": [
+            762.45,
+            756.4508918113401,
+            768.44910818866
+          ],
+          "failures_per_stream": 744.45,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.124075,
+            0.12300209725456254,
+            0.12515592573471213
+          ],
+          "false_alarms_per_stream": 0.43333333333333335,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_no_dwell": {
+          "cost": [
+            762.45,
+            756.4508918113401,
+            768.44910818866
+          ],
+          "failures_per_stream": 744.45,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.124075,
+            0.12300209725456254,
+            0.12515592573471213
+          ],
+          "false_alarms_per_stream": 0.43333333333333335,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_cost_blind": {
+          "cost": [
+            767.1619333333331,
+            760.5792248147728,
+            773.7446418518933
+          ],
+          "failures_per_stream": 718.5833333333334,
+          "switches": 0.0,
+          "updates": 0.95,
+          "pre_failure": [
+            0.11976388888888889,
+            0.11870730586121539,
+            0.12082858691354659
+          ],
+          "false_alarms_per_stream": 0.43333333333333335,
+          "unnecessary_actions_per_stream": 0.016666666666666666,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_no_update": {
+          "cost": [
+            762.45,
+            756.4508918113401,
+            768.44910818866
+          ],
+          "failures_per_stream": 744.45,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.124075,
+            0.12300209725456254,
+            0.12515592573471213
+          ],
+          "false_alarms_per_stream": 0.43333333333333335,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        },
+        "abl_nominal_q": {
+          "cost": [
+            762.45,
+            756.4508918113401,
+            768.44910818866
+          ],
+          "failures_per_stream": 744.45,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.124075,
+            0.12300209725456254,
+            0.12515592573471213
+          ],
+          "false_alarms_per_stream": 0.43333333333333335,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0
+        }
+      },
+      "cost_minus_proposed": {
+        "fixed_lookup": {
+          "diff": 139.03333333333333,
+          "ci_low": 132.7905758529215,
+          "ci_high": 145.27609081374516,
+          "wilcoxon_p": 1.6221551472086038e-11
+        },
+        "fixed_minweight": {
+          "diff": 30.0,
+          "ci_low": 25.614491040133267,
+          "ci_high": 34.38550895986673,
+          "wilcoxon_p": 4.7693821851340285e-11
+        },
+        "static_tree": {
+          "diff": -6.0,
+          "ci_low": -6.0,
+          "ci_high": -6.0,
+          "wilcoxon_p": 9.485737571073745e-15
+        },
+        "adaptive_baseline": {
+          "diff": 0.6037666666666667,
+          "ci_low": -0.6043676427770927,
+          "ci_high": 1.8119009761104259,
+          "wilcoxon_p": 0.31731050786291415
+        },
+        "abl_no_guard": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_no_dwell": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_cost_blind": {
+          "diff": 4.711933333333324,
+          "ci_low": 0.720533493508861,
+          "ci_high": 8.703333173157787,
+          "wilcoxon_p": 0.01116584143051078
+        },
+        "abl_no_update": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_nominal_q": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        }
+      }
+    },
+    "abrupt 0.02->0.05": {
+      "methods": {
+        "fixed_lookup": {
+          "cost": [
+            176.4,
+            173.31609396923503,
+            179.48390603076498
+          ],
+          "failures_per_stream": 176.4,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.00925,
+            0.00881809921751268,
+            0.009702847726544096
+          ],
+          "post_failure": [
+            0.04955,
+            0.04855702744220457,
+            0.050562199355452836
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "fixed_minweight": {
+          "cost": [
+            154.11666666666667,
+            151.31895306298478,
+            156.91438027034857
+          ],
+          "failures_per_stream": 151.11666666666667,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.007822222222222222,
+            0.007425608820323001,
+            0.008239843510778805
+          ],
+          "post_failure": [
+            0.04255,
+            0.04162726712637884,
+            0.04349225845601295
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "static_tree": {
+          "cost": [
+            177.05,
+            173.87137367981722,
+            180.2286263201828
+          ],
+          "failures_per_stream": 165.05,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.010866666666666667,
+            0.01039804122852662,
+            0.011356170043817696
+          ],
+          "post_failure": [
+            0.04415,
+            0.04321065868054351,
+            0.04510879860819472
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "adaptive_baseline": {
+          "cost": [
+            172.31235833333332,
+            168.95299430527578,
+            175.67172236139086
+          ],
+          "failures_per_stream": 154.23333333333332,
+          "switches": 1.45,
+          "updates": 0.0,
+          "pre_failure": [
+            0.008216666666666667,
+            0.007809996182091296,
+            0.008644328201616753
+          ],
+          "post_failure": [
+            0.043194444444444445,
+            0.04226497988216548,
+            0.044143407081949186
+          ],
+          "false_alarms_per_stream": 0.21666666666666667,
+          "unnecessary_actions_per_stream": 0.03333333333333333,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 277.0,
+            "streams_with_action": 21
+          }
+        },
+        "proposed": {
+          "cost": [
+            183.27074166666668,
+            180.09378501791664,
+            186.44769831541672
+          ],
+          "failures_per_stream": 165.61666666666667,
+          "switches": 0.13333333333333333,
+          "updates": 0.0,
+          "pre_failure": [
+            0.010738888888888888,
+            0.010273058941782032,
+            0.011225602229013781
+          ],
+          "post_failure": [
+            0.04446666666666667,
+            0.043524079254605004,
+            0.045428697851014284
+          ],
+          "false_alarms_per_stream": 0.21666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 505.5,
+            "streams_with_action": 2
+          }
+        },
+        "abl_no_guard": {
+          "cost": [
+            183.27074166666668,
+            180.09378501791664,
+            186.44769831541672
+          ],
+          "failures_per_stream": 165.61666666666667,
+          "switches": 0.13333333333333333,
+          "updates": 0.0,
+          "pre_failure": [
+            0.010738888888888888,
+            0.010273058941782032,
+            0.011225602229013781
+          ],
+          "post_failure": [
+            0.04446666666666667,
+            0.043524079254605004,
+            0.045428697851014284
+          ],
+          "false_alarms_per_stream": 0.21666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 505.5,
+            "streams_with_action": 2
+          }
+        },
+        "abl_no_dwell": {
+          "cost": [
+            183.27074166666668,
+            180.09378501791664,
+            186.44769831541672
+          ],
+          "failures_per_stream": 165.61666666666667,
+          "switches": 0.13333333333333333,
+          "updates": 0.0,
+          "pre_failure": [
+            0.010738888888888888,
+            0.010273058941782032,
+            0.011225602229013781
+          ],
+          "post_failure": [
+            0.04446666666666667,
+            0.043524079254605004,
+            0.045428697851014284
+          ],
+          "false_alarms_per_stream": 0.21666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 505.5,
+            "streams_with_action": 2
+          }
+        },
+        "abl_cost_blind": {
+          "cost": [
+            190.93754166666665,
+            186.46766547677967,
+            195.40741785655362
+          ],
+          "failures_per_stream": 162.35,
+          "switches": 0.08333333333333333,
+          "updates": 0.3,
+          "pre_failure": [
+            0.010438888888888888,
+            0.009979690446797588,
+            0.01091898352905827
+          ],
+          "post_failure": [
+            0.04367777777777778,
+            0.04274330197520364,
+            0.04463173102520318
+          ],
+          "false_alarms_per_stream": 0.21666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 662.0,
+            "streams_with_action": 15
+          }
+        },
+        "abl_no_update": {
+          "cost": [
+            183.27074166666668,
+            180.09378501791664,
+            186.44769831541672
+          ],
+          "failures_per_stream": 165.61666666666667,
+          "switches": 0.13333333333333333,
+          "updates": 0.0,
+          "pre_failure": [
+            0.010738888888888888,
+            0.010273058941782032,
+            0.011225602229013781
+          ],
+          "post_failure": [
+            0.04446666666666667,
+            0.043524079254605004,
+            0.045428697851014284
+          ],
+          "false_alarms_per_stream": 0.21666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 505.5,
+            "streams_with_action": 2
+          }
+        },
+        "abl_nominal_q": {
+          "cost": [
+            168.70603333333335,
+            165.68931207852694,
+            171.72275458813976
+          ],
+          "failures_per_stream": 153.43333333333334,
+          "switches": 1.15,
+          "updates": 0.0,
+          "pre_failure": [
+            0.008377777777777777,
+            0.007967070689566461,
+            0.008809469039572299
+          ],
+          "post_failure": [
+            0.04276666666666667,
+            0.041841664107417895,
+            0.04371118556020831
+          ],
+          "false_alarms_per_stream": 0.21666666666666667,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 403.0,
+            "streams_with_action": 9
+          }
+        }
+      },
+      "cost_minus_proposed": {
+        "fixed_lookup": {
+          "diff": -6.8707416666666665,
+          "ci_low": -9.977665520113659,
+          "ci_high": -3.763817813219674,
+          "wilcoxon_p": 7.487916504282801e-05
+        },
+        "fixed_minweight": {
+          "diff": -29.154075,
+          "ci_low": -31.761707683289877,
+          "ci_high": -26.54644231671012,
+          "wilcoxon_p": 1.619356055415105e-11
+        },
+        "static_tree": {
+          "diff": -6.220741666666667,
+          "ci_low": -6.877834624901072,
+          "ci_high": -5.563648708432262,
+          "wilcoxon_p": 1.2444320857660105e-13
+        },
+        "adaptive_baseline": {
+          "diff": -10.958383333333334,
+          "ci_low": -13.900672936484577,
+          "ci_high": -8.01609373018209,
+          "wilcoxon_p": 1.4382445047729447e-08
+        },
+        "abl_no_guard": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_no_dwell": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_cost_blind": {
+          "diff": 7.6668,
+          "ci_low": 3.3341925763440416,
+          "ci_high": 11.99940742365596,
+          "wilcoxon_p": 0.00100530430207743
+        },
+        "abl_no_update": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_nominal_q": {
+          "diff": -14.564708333333332,
+          "ci_low": -17.365216900192067,
+          "ci_high": -11.764199766474595,
+          "wilcoxon_p": 5.20990993785809e-10
+        }
+      }
+    },
+    "abrupt 0.02->0.10": {
+      "methods": {
+        "fixed_lookup": {
+          "cost": [
+            477.68333333333334,
+            472.5747988336024,
+            482.79186783306426
+          ],
+          "failures_per_stream": 477.68333333333334,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.009583333333333333,
+            0.009143605538354185,
+            0.010043993844524765
+          ],
+          "post_failure": [
+            0.14964444444444444,
+            0.14800394812525192,
+            0.1512998951767235
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "fixed_minweight": {
+          "cost": [
+            421.73333333333335,
+            417.01154122367325,
+            426.45512544299345
+          ],
+          "failures_per_stream": 418.73333333333335,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.008244444444444445,
+            0.007837075121905263,
+            0.00867280363170463
+          ],
+          "post_failure": [
+            0.13133333333333333,
+            0.12978080555052265,
+            0.13290159711215474
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "static_tree": {
+          "cost": [
+            421.3833333333333,
+            416.3240559539541,
+            426.44261071271256
+          ],
+          "failures_per_stream": 409.3833333333333,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.011377777777777778,
+            0.01089813660900337,
+            0.011878275069534943
+          ],
+          "post_failure": [
+            0.12508333333333332,
+            0.12356305023086916,
+            0.12661961920389248
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "adaptive_baseline": {
+          "cost": [
+            426.36601666666667,
+            421.56944058287615,
+            431.1625927504572
+          ],
+          "failures_per_stream": 402.28333333333336,
+          "switches": 2.0166666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.008805555555555556,
+            0.008384319609749216,
+            0.009247757415878
+          ],
+          "post_failure": [
+            0.1252888888888889,
+            0.12376752590299887,
+            0.12682624586903649
+          ],
+          "false_alarms_per_stream": 0.23333333333333334,
+          "unnecessary_actions_per_stream": 0.016666666666666666,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 153.5,
+            "streams_with_action": 60
+          }
+        },
+        "proposed": {
+          "cost": [
+            427.599375,
+            422.4722775993854,
+            432.7264724006146
+          ],
+          "failures_per_stream": 409.56666666666666,
+          "switches": 0.23333333333333334,
+          "updates": 0.0,
+          "pre_failure": [
+            0.01095,
+            0.010479560544067389,
+            0.011441313837982468
+          ],
+          "post_failure": [
+            0.12557222222222222,
+            0.1240493729524355,
+            0.1271110533925987
+          ],
+          "false_alarms_per_stream": 0.23333333333333334,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 346.0,
+            "streams_with_action": 5
+          }
+        },
+        "abl_no_guard": {
+          "cost": [
+            427.599375,
+            422.4722775993854,
+            432.7264724006146
+          ],
+          "failures_per_stream": 409.56666666666666,
+          "switches": 0.23333333333333334,
+          "updates": 0.0,
+          "pre_failure": [
+            0.01095,
+            0.010479560544067389,
+            0.011441313837982468
+          ],
+          "post_failure": [
+            0.12557222222222222,
+            0.1240493729524355,
+            0.1271110533925987
+          ],
+          "false_alarms_per_stream": 0.23333333333333334,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 346.0,
+            "streams_with_action": 5
+          }
+        },
+        "abl_no_dwell": {
+          "cost": [
+            427.599375,
+            422.4722775993854,
+            432.7264724006146
+          ],
+          "failures_per_stream": 409.56666666666666,
+          "switches": 0.23333333333333334,
+          "updates": 0.0,
+          "pre_failure": [
+            0.01095,
+            0.010479560544067389,
+            0.011441313837982468
+          ],
+          "post_failure": [
+            0.12557222222222222,
+            0.1240493729524355,
+            0.1271110533925987
+          ],
+          "false_alarms_per_stream": 0.23333333333333334,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 346.0,
+            "streams_with_action": 5
+          }
+        },
+        "abl_cost_blind": {
+          "cost": [
+            449.1274583333334,
+            443.5487111834339,
+            454.70620548323285
+          ],
+          "failures_per_stream": 398.7,
+          "switches": 0.06666666666666667,
+          "updates": 0.9,
+          "pre_failure": [
+            0.010883333333333333,
+            0.010414344518882073,
+            0.01137319937540335
+          ],
+          "post_failure": [
+            0.12201666666666666,
+            0.120512655901453,
+            0.12353681109614469
+          ],
+          "false_alarms_per_stream": 0.23333333333333334,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 556.0,
+            "streams_with_action": 47
+          }
+        },
+        "abl_no_update": {
+          "cost": [
+            427.599375,
+            422.4722775993854,
+            432.7264724006146
+          ],
+          "failures_per_stream": 409.56666666666666,
+          "switches": 0.23333333333333334,
+          "updates": 0.0,
+          "pre_failure": [
+            0.01095,
+            0.010479560544067389,
+            0.011441313837982468
+          ],
+          "post_failure": [
+            0.12557222222222222,
+            0.1240493729524355,
+            0.1271110533925987
+          ],
+          "false_alarms_per_stream": 0.23333333333333334,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 346.0,
+            "streams_with_action": 5
+          }
+        },
+        "abl_nominal_q": {
+          "cost": [
+            432.09074166666664,
+            426.9946743293208,
+            437.1868090040125
+          ],
+          "failures_per_stream": 411.8333333333333,
+          "switches": 1.6833333333333333,
+          "updates": 0.0,
+          "pre_failure": [
+            0.009083333333333334,
+            0.008655400388201824,
+            0.009532220336443869
+          ],
+          "post_failure": [
+            0.12819444444444444,
+            0.12665795972338656,
+            0.12974679914038206
+          ],
+          "false_alarms_per_stream": 0.23333333333333334,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 361.0,
+            "streams_with_action": 41
+          }
+        }
+      },
+      "cost_minus_proposed": {
+        "fixed_lookup": {
+          "diff": 50.08395833333334,
+          "ci_low": 46.03127053862093,
+          "ci_high": 54.136646128045754,
+          "wilcoxon_p": 1.620373395486204e-11
+        },
+        "fixed_minweight": {
+          "diff": -5.866041666666666,
+          "ci_low": -9.10028514402053,
+          "ci_high": -2.6317981893128017,
+          "wilcoxon_p": 0.0010633220167783014
+        },
+        "static_tree": {
+          "diff": -6.2160416666666665,
+          "ci_low": -7.631080704993031,
+          "ci_high": -4.801002628340302,
+          "wilcoxon_p": 1.5265674956958902e-10
+        },
+        "adaptive_baseline": {
+          "diff": -1.2333583333333327,
+          "ci_low": -3.0693991452605074,
+          "ci_high": 0.6026824785938423,
+          "wilcoxon_p": 0.2824636897523628
+        },
+        "abl_no_guard": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_no_dwell": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_cost_blind": {
+          "diff": 21.528083333333335,
+          "ci_low": 16.972377320060968,
+          "ci_high": 26.083789346605702,
+          "wilcoxon_p": 2.0007263776997794e-09
+        },
+        "abl_no_update": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_nominal_q": {
+          "diff": 4.491366666666669,
+          "ci_low": 1.7004811672196594,
+          "ci_high": 7.282252166113678,
+          "wilcoxon_p": 0.001587152433157814
+        }
+      }
+    },
+    "abrupt 0.10->0.02": {
+      "methods": {
+        "fixed_lookup": {
+          "cost": [
+            476.03333333333336,
+            471.29597269200247,
+            480.77069397466425
+          ],
+          "failures_per_stream": 476.03333333333336,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.14900555555555556,
+            0.14736797678582533,
+            0.1506581160084076
+          ],
+          "post_failure": [
+            0.009672222222222223,
+            0.009230430944761971,
+            0.010134942421802892
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "fixed_minweight": {
+          "cost": [
+            417.7,
+            413.3017944350523,
+            422.0982055649477
+          ],
+          "failures_per_stream": 414.7,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.1298777777777778,
+            0.1283326521618707,
+            0.13143870151794992
+          ],
+          "post_failure": [
+            0.008355555555555555,
+            0.007945402862899903,
+            0.00878669337031738
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "static_tree": {
+          "cost": [
+            414.93333333333334,
+            409.8792508775852,
+            419.98741578908147
+          ],
+          "failures_per_stream": 402.93333333333334,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.12268333333333334,
+            0.12117575909634482,
+            0.12420701277889723
+          ],
+          "post_failure": [
+            0.011627777777777779,
+            0.011142841607581118,
+            0.012133559400073827
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "adaptive_baseline": {
+          "cost": [
+            413.04953333333344,
+            408.22816769555976,
+            417.8708989711071
+          ],
+          "failures_per_stream": 394.3666666666667,
+          "switches": 0.9666666666666667,
+          "updates": 0.0,
+          "pre_failure": [
+            0.12273333333333333,
+            0.12122549242319787,
+            0.1242572773178675
+          ],
+          "post_failure": [
+            0.008722222222222221,
+            0.008303016440490371,
+            0.0091623974754313
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.016666666666666666,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 166.5,
+            "streams_with_action": 56
+          }
+        },
+        "proposed": {
+          "cost": [
+            420.7278333333333,
+            415.6544842102899,
+            425.8011824563767
+          ],
+          "failures_per_stream": 402.73333333333335,
+          "switches": 0.016666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.12268333333333334,
+            0.12117575909634482,
+            0.12420701277889723
+          ],
+          "post_failure": [
+            0.01156111111111111,
+            0.011077581138500667,
+            0.01206548938138984
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 335.0,
+            "streams_with_action": 1
+          }
+        },
+        "abl_no_guard": {
+          "cost": [
+            420.7278333333333,
+            415.6544842102899,
+            425.8011824563767
+          ],
+          "failures_per_stream": 402.73333333333335,
+          "switches": 0.016666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.12268333333333334,
+            0.12117575909634482,
+            0.12420701277889723
+          ],
+          "post_failure": [
+            0.01156111111111111,
+            0.011077581138500667,
+            0.01206548938138984
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 335.0,
+            "streams_with_action": 1
+          }
+        },
+        "abl_no_dwell": {
+          "cost": [
+            420.7278333333333,
+            415.6544842102899,
+            425.8011824563767
+          ],
+          "failures_per_stream": 402.73333333333335,
+          "switches": 0.016666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.12268333333333334,
+            0.12117575909634482,
+            0.12420701277889723
+          ],
+          "post_failure": [
+            0.01156111111111111,
+            0.011077581138500667,
+            0.01206548938138984
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 335.0,
+            "streams_with_action": 1
+          }
+        },
+        "abl_cost_blind": {
+          "cost": [
+            447.3643583333333,
+            441.16634657198716,
+            453.56237009467947
+          ],
+          "failures_per_stream": 397.18333333333334,
+          "switches": 0.0,
+          "updates": 1.0,
+          "pre_failure": [
+            0.11825,
+            0.11676640091523165,
+            0.11974989352367547
+          ],
+          "post_failure": [
+            0.014144444444444444,
+            0.013609189777461573,
+            0.014700437143300769
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.016666666666666666,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "abl_no_update": {
+          "cost": [
+            420.7278333333333,
+            415.6544842102899,
+            425.8011824563767
+          ],
+          "failures_per_stream": 402.73333333333335,
+          "switches": 0.016666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.12268333333333334,
+            0.12117575909634482,
+            0.12420701277889723
+          ],
+          "post_failure": [
+            0.01156111111111111,
+            0.011077581138500667,
+            0.01206548938138984
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 335.0,
+            "streams_with_action": 1
+          }
+        },
+        "abl_nominal_q": {
+          "cost": [
+            413.9844166666666,
+            409.2349926049694,
+            418.7338407283638
+          ],
+          "failures_per_stream": 395.31666666666666,
+          "switches": 1.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.12268333333333334,
+            0.12117575909634482,
+            0.12420701277889723
+          ],
+          "post_failure": [
+            0.00908888888888889,
+            0.008660823083378878,
+            0.009537908515247186
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 367.0,
+            "streams_with_action": 60
+          }
+        }
+      },
+      "cost_minus_proposed": {
+        "fixed_lookup": {
+          "diff": 55.3055,
+          "ci_low": 51.06253759394981,
+          "ci_high": 59.54846240605019,
+          "wilcoxon_p": 1.620373395486204e-11
+        },
+        "fixed_minweight": {
+          "diff": -3.0278333333333336,
+          "ci_low": -6.5446290709430155,
+          "ci_high": 0.4889624042763483,
+          "wilcoxon_p": 0.06933240335451729
+        },
+        "static_tree": {
+          "diff": -5.7945,
+          "ci_low": -6.205704550197138,
+          "ci_high": -5.383295449802862,
+          "wilcoxon_p": 6.903902155518655e-13
+        },
+        "adaptive_baseline": {
+          "diff": -7.678300000000001,
+          "ci_low": -8.934085684746494,
+          "ci_high": -6.422514315253508,
+          "wilcoxon_p": 6.363774575830323e-11
+        },
+        "abl_no_guard": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_no_dwell": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_cost_blind": {
+          "diff": 26.636524999999985,
+          "ci_low": 22.97219298202033,
+          "ci_high": 30.300857017979638,
+          "wilcoxon_p": 2.4899894772463144e-11
+        },
+        "abl_no_update": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_nominal_q": {
+          "diff": -6.743416666666667,
+          "ci_low": -7.861597866610477,
+          "ci_high": -5.625235466722856,
+          "wilcoxon_p": 2.979661437527889e-11
+        }
+      }
+    },
+    "gradual 0.02->0.10": {
+      "methods": {
+        "fixed_lookup": {
+          "cost": [
+            389.56666666666666,
+            384.28100478835347,
+            394.85232854497985
+          ],
+          "failures_per_stream": 389.56666666666666,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.00946,
+            0.008982525344873577,
+            0.00996260012449973
+          ],
+          "post_failure": [
+            0.1491111111111111,
+            0.1467989294266169,
+            0.15145324651161543
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "fixed_minweight": {
+          "cost": [
+            341.3,
+            336.3018545825453,
+            346.29814541745475
+          ],
+          "failures_per_stream": 338.3,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.008146666666666667,
+            0.007704185899625587,
+            0.0086143401720427
+          ],
+          "post_failure": [
+            0.13036666666666666,
+            0.12818261882037918,
+            0.13258226835305892
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "static_tree": {
+          "cost": [
+            347.05,
+            342.10826645767804,
+            351.991733542322
+          ],
+          "failures_per_stream": 335.05,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.011293333333333334,
+            0.010770954034694113,
+            0.011840744197973015
+          ],
+          "post_failure": [
+            0.12408888888888889,
+            0.1219509914706778,
+            0.1262588760512436
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "adaptive_baseline": {
+          "cost": [
+            351.63103333333333,
+            347.13406240066075,
+            356.1280042660059
+          ],
+          "failures_per_stream": 329.15,
+          "switches": 1.9666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.008866666666666667,
+            0.008404670860440711,
+            0.009353818332812056
+          ],
+          "post_failure": [
+            0.12454444444444444,
+            0.12240313898207236,
+            0.12671780076234848
+          ],
+          "false_alarms_per_stream": 0.15,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 1491.5,
+            "streams_with_action": 58
+          }
+        },
+        "proposed": {
+          "cost": [
+            352.9137416666666,
+            348.0798891786105,
+            357.7475941547228
+          ],
+          "failures_per_stream": 335.23333333333335,
+          "switches": 0.16666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.011093333333333334,
+            0.010575660369077011,
+            0.011636048107594428
+          ],
+          "post_failure": [
+            0.12441111111111111,
+            0.12227080214869757,
+            0.1265834823110893
+          ],
+          "false_alarms_per_stream": 0.15,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 1175.5,
+            "streams_with_action": 2
+          }
+        },
+        "abl_no_guard": {
+          "cost": [
+            352.9137416666666,
+            348.0798891786105,
+            357.7475941547228
+          ],
+          "failures_per_stream": 335.23333333333335,
+          "switches": 0.16666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.011093333333333334,
+            0.010575660369077011,
+            0.011636048107594428
+          ],
+          "post_failure": [
+            0.12441111111111111,
+            0.12227080214869757,
+            0.1265834823110893
+          ],
+          "false_alarms_per_stream": 0.15,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 1175.5,
+            "streams_with_action": 2
+          }
+        },
+        "abl_no_dwell": {
+          "cost": [
+            352.9137416666666,
+            348.0798891786105,
+            357.7475941547228
+          ],
+          "failures_per_stream": 335.23333333333335,
+          "switches": 0.16666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.011093333333333334,
+            0.010575660369077011,
+            0.011636048107594428
+          ],
+          "post_failure": [
+            0.12441111111111111,
+            0.12227080214869757,
+            0.1265834823110893
+          ],
+          "false_alarms_per_stream": 0.15,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 1175.5,
+            "streams_with_action": 2
+          }
+        },
+        "abl_cost_blind": {
+          "cost": [
+            378.5721083333334,
+            371.9114585978368,
+            385.23275806883
+          ],
+          "failures_per_stream": 327.05,
+          "switches": 0.06666666666666667,
+          "updates": 0.9,
+          "pre_failure": [
+            0.011046666666666666,
+            0.010530098136233674,
+            0.011588279397372102
+          ],
+          "post_failure": [
+            0.11991111111111111,
+            0.11780491484532744,
+            0.12204975375806244
+          ],
+          "false_alarms_per_stream": 0.15,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 1905.0,
+            "streams_with_action": 47
+          }
+        },
+        "abl_no_update": {
+          "cost": [
+            352.9137416666666,
+            348.0798891786105,
+            357.7475941547228
+          ],
+          "failures_per_stream": 335.23333333333335,
+          "switches": 0.16666666666666666,
+          "updates": 0.0,
+          "pre_failure": [
+            0.011093333333333334,
+            0.010575660369077011,
+            0.011636048107594428
+          ],
+          "post_failure": [
+            0.12441111111111111,
+            0.12227080214869757,
+            0.1265834823110893
+          ],
+          "false_alarms_per_stream": 0.15,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 1175.5,
+            "streams_with_action": 2
+          }
+        },
+        "abl_nominal_q": {
+          "cost": [
+            358.158525,
+            353.4688805797107,
+            362.8481694202893
+          ],
+          "failures_per_stream": 339.76666666666665,
+          "switches": 1.65,
+          "updates": 0.0,
+          "pre_failure": [
+            0.00906,
+            0.00859290370142368,
+            0.009552242255958252
+          ],
+          "post_failure": [
+            0.12864444444444445,
+            0.1264728849886616,
+            0.13084770475825425
+          ],
+          "false_alarms_per_stream": 0.15,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 2114.0,
+            "streams_with_action": 35
+          }
+        }
+      },
+      "cost_minus_proposed": {
+        "fixed_lookup": {
+          "diff": 36.652924999999996,
+          "ci_low": 32.35400103302475,
+          "ci_high": 40.95184896697524,
+          "wilcoxon_p": 2.3835089922433556e-11
+        },
+        "fixed_minweight": {
+          "diff": -11.613741666666668,
+          "ci_low": -15.075286338244396,
+          "ci_high": -8.15219699508894,
+          "wilcoxon_p": 1.5208725286124033e-07
+        },
+        "static_tree": {
+          "diff": -5.863741666666667,
+          "ci_low": -6.9591168784636235,
+          "ci_high": -4.76836645486971,
+          "wilcoxon_p": 7.588643873837572e-12
+        },
+        "adaptive_baseline": {
+          "diff": -1.282708333333333,
+          "ci_low": -3.308563625120226,
+          "ci_high": 0.7431469584535604,
+          "wilcoxon_p": 0.22449407931846777
+        },
+        "abl_no_guard": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_no_dwell": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_cost_blind": {
+          "diff": 25.658366666666666,
+          "ci_low": 21.11504069204226,
+          "ci_high": 30.20169264129107,
+          "wilcoxon_p": 7.555220876380673e-10
+        },
+        "abl_no_update": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_nominal_q": {
+          "diff": 5.244783333333334,
+          "ci_low": 1.5823157964846168,
+          "ci_high": 8.907250870182052,
+          "wilcoxon_p": 0.013867583961924475
+        }
+      }
+    },
+    "q-shift 0.05->0.15 (p=0.05)": {
+      "methods": {
+        "fixed_lookup": {
+          "cost": [
+            300.65,
+            296.27900316967856,
+            305.0209968303214
+          ],
+          "failures_per_stream": 300.65,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.050444444444444445,
+            0.04944292132187943,
+            0.05146515618661748
+          ],
+          "post_failure": [
+            0.049772222222222225,
+            0.04877711695047234,
+            0.05078654480639986
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "fixed_minweight": {
+          "cost": [
+            278.06666666666666,
+            274.27873406169766,
+            281.85459927163566
+          ],
+          "failures_per_stream": 275.06666666666666,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.042805555555555555,
+            0.04188014631095612,
+            0.043750479474532665
+          ],
+          "post_failure": [
+            0.048883333333333334,
+            0.04789679253858191,
+            0.04988912938143117
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "static_tree": {
+          "cost": [
+            337.96666666666664,
+            333.1608011420004,
+            342.77253219133286
+          ],
+          "failures_per_stream": 325.96666666666664,
+          "switches": 0.0,
+          "updates": 0.0,
+          "pre_failure": [
+            0.04386111111111111,
+            0.042924742786651426,
+            0.04481694905510758
+          ],
+          "post_failure": [
+            0.06479444444444445,
+            0.06366649258648815,
+            0.06594097241330327
+          ],
+          "false_alarms_per_stream": 0.0,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        },
+        "adaptive_baseline": {
+          "cost": [
+            345.68069999999994,
+            340.7368575087042,
+            350.6245424912957
+          ],
+          "failures_per_stream": 321.8666666666667,
+          "switches": 1.8666666666666667,
+          "updates": 0.0,
+          "pre_failure": [
+            0.04318888888888889,
+            0.04225948211273493,
+            0.04413779397739936
+          ],
+          "post_failure": [
+            0.0641,
+            0.0629777532629687,
+            0.06524085248927655
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.1,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 146.0,
+            "streams_with_action": 53
+          }
+        },
+        "proposed": {
+          "cost": [
+            314.89022500000004,
+            308.7902286341985,
+            320.9902213658016
+          ],
+          "failures_per_stream": 297.1333333333333,
+          "switches": 0.7,
+          "updates": 0.0,
+          "pre_failure": [
+            0.043894444444444444,
+            0.04295773251142158,
+            0.04485062457421964
+          ],
+          "post_failure": [
+            0.05515,
+            0.054104895807034876,
+            0.056214091962835035
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 350.0,
+            "streams_with_action": 38
+          }
+        },
+        "abl_no_guard": {
+          "cost": [
+            314.89022500000004,
+            308.7902286341985,
+            320.9902213658016
+          ],
+          "failures_per_stream": 297.1333333333333,
+          "switches": 0.7,
+          "updates": 0.0,
+          "pre_failure": [
+            0.043894444444444444,
+            0.04295773251142158,
+            0.04485062457421964
+          ],
+          "post_failure": [
+            0.05515,
+            0.054104895807034876,
+            0.056214091962835035
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 350.0,
+            "streams_with_action": 38
+          }
+        },
+        "abl_no_dwell": {
+          "cost": [
+            314.89022500000004,
+            308.7902286341985,
+            320.9902213658016
+          ],
+          "failures_per_stream": 297.1333333333333,
+          "switches": 0.7,
+          "updates": 0.0,
+          "pre_failure": [
+            0.043894444444444444,
+            0.04295773251142158,
+            0.04485062457421964
+          ],
+          "post_failure": [
+            0.05515,
+            0.054104895807034876,
+            0.056214091962835035
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 350.0,
+            "streams_with_action": 38
+          }
+        },
+        "abl_cost_blind": {
+          "cost": [
+            352.8885333333334,
+            344.400907918778,
+            361.3761587478888
+          ],
+          "failures_per_stream": 319.1,
+          "switches": 0.05,
+          "updates": 0.48333333333333334,
+          "pre_failure": [
+            0.04351111111111111,
+            0.042578359727453746,
+            0.04446334705354198
+          ],
+          "post_failure": [
+            0.06285555555555555,
+            0.061743627595203764,
+            0.06398614238543868
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.03333333333333333,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 600.5,
+            "streams_with_action": 4
+          }
+        },
+        "abl_no_update": {
+          "cost": [
+            314.89022500000004,
+            308.7902286341985,
+            320.9902213658016
+          ],
+          "failures_per_stream": 297.1333333333333,
+          "switches": 0.7,
+          "updates": 0.0,
+          "pre_failure": [
+            0.043894444444444444,
+            0.04295773251142158,
+            0.04485062457421964
+          ],
+          "post_failure": [
+            0.05515,
+            0.054104895807034876,
+            0.056214091962835035
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.0,
+          "guard_vetoes_per_stream": 0.0,
+          "waits_per_stream": 0.0,
+          "adaptation_time": {
+            "median": 350.0,
+            "streams_with_action": 38
+          }
+        },
+        "abl_nominal_q": {
+          "cost": [
+            326.31986666666666,
+            318.72690261796924,
+            333.91283071536407
+          ],
+          "failures_per_stream": 309.3,
+          "switches": 0.3333333333333333,
+          "updates": 0.0,
+          "pre_failure": [
+            0.04356666666666666,
+            0.04263334005795436,
+            0.04451947546284505
+          ],
+          "post_failure": [
+            0.059533333333333334,
+            0.05844957539684591,
+            0.060635891943535566
+          ],
+          "false_alarms_per_stream": 0.25,
+          "unnecessary_actions_per_stream": 0.05,
+          "guard_vetoes_per_stream": 1.0666666666666667,
+          "waits_per_stream": 1.1,
+          "adaptation_time": {
+            "median": null,
+            "streams_with_action": 0
+          }
+        }
+      },
+      "cost_minus_proposed": {
+        "fixed_lookup": {
+          "diff": -14.240225000000002,
+          "ci_low": -19.994553396526065,
+          "ci_high": -8.48589660347394,
+          "wilcoxon_p": 1.3568080927403646e-05
+        },
+        "fixed_minweight": {
+          "diff": -36.82355833333334,
+          "ci_low": -42.170288997407575,
+          "ci_high": -31.476827669259105,
+          "wilcoxon_p": 1.628788780764755e-11
+        },
+        "static_tree": {
+          "diff": 23.076441666666664,
+          "ci_low": 17.513236457583663,
+          "ci_high": 28.639646875749666,
+          "wilcoxon_p": 8.223641112461181e-08
+        },
+        "adaptive_baseline": {
+          "diff": 30.790475,
+          "ci_low": 24.832352343572964,
+          "ci_high": 36.74859765642704,
+          "wilcoxon_p": 8.069566298090764e-10
+        },
+        "abl_no_guard": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_no_dwell": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_cost_blind": {
+          "diff": 37.99830833333332,
+          "ci_low": 30.029525123049076,
+          "ci_high": 45.96709154361756,
+          "wilcoxon_p": 7.615942892424528e-09
+        },
+        "abl_no_update": {
+          "diff": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "wilcoxon_p": 1.0
+        },
+        "abl_nominal_q": {
+          "diff": 11.429641666666665,
+          "ci_low": 4.090894211309515,
+          "ci_high": 18.768389122023816,
+          "wilcoxon_p": 0.0019074838212799745
+        }
+      }
+    }
+  },
+  "update_cost_sensitivity": {
+    "abrupt 0.02->0.10|5": {
+      "updates": 0.8,
+      "diff": -2.238416666666664,
+      "ci_low": -6.904228645769207,
+      "ci_high": 2.4273953124358787,
+      "wilcoxon_p": 0.39308402582990964
+    },
+    "abrupt 0.02->0.10|10": {
+      "updates": 0.4,
+      "diff": 3.43936666666667,
+      "ci_low": -0.036258993656091754,
+      "ci_high": 6.914992326989432,
+      "wilcoxon_p": 0.07560393705464363
+    },
+    "abrupt 0.02->0.10|20": {
+      "updates": 0.03333333333333333,
+      "diff": 7.527366666666667,
+      "ci_low": 5.735281443428292,
+      "ci_high": 9.319451889905043,
+      "wilcoxon_p": 1.4455765816611255e-07
+    },
+    "abrupt 0.02->0.10|40": {
+      "updates": 0.0,
+      "diff": 7.097083333333334,
+      "ci_low": 5.492932837159541,
+      "ci_high": 8.701233829507126,
+      "wilcoxon_p": 1.0144446281440423e-07
+    },
+    "abrupt 0.02->0.10|80": {
+      "updates": 0.0,
+      "diff": 7.097083333333334,
+      "ci_low": 5.492932837159541,
+      "ci_high": 8.701233829507126,
+      "wilcoxon_p": 1.0144446281440423e-07
+    },
+    "abrupt 0.02->0.10|160": {
+      "updates": 0.0,
+      "diff": 7.097083333333334,
+      "ci_low": 5.492932837159541,
+      "ci_high": 8.701233829507126,
+      "wilcoxon_p": 1.0144446281440423e-07
+    },
+    "stationary p=0.10|5": {
+      "updates": 0.9,
+      "diff": -23.75635000000001,
+      "ci_low": -31.778855899939863,
+      "ci_high": -15.733844100060152,
+      "wilcoxon_p": 3.377663086858238e-05
+    },
+    "stationary p=0.10|10": {
+      "updates": 0.5666666666666667,
+      "diff": -8.096950000000003,
+      "ci_low": -16.05670999642967,
+      "ci_high": -0.1371900035703355,
+      "wilcoxon_p": 0.2489862504854191
+    },
+    "stationary p=0.10|20": {
+      "updates": 0.1,
+      "diff": 6.247083333333334,
+      "ci_low": 4.4052489384672455,
+      "ci_high": 8.088917728199423,
+      "wilcoxon_p": 3.7284083559163313e-06
+    },
+    "stationary p=0.10|40": {
+      "updates": 0.0,
+      "diff": 6.0,
+      "ci_low": 6.0,
+      "ci_high": 6.0,
+      "wilcoxon_p": 4.320463057827488e-08
+    },
+    "stationary p=0.10|80": {
+      "updates": 0.0,
+      "diff": 6.0,
+      "ci_low": 6.0,
+      "ci_high": 6.0,
+      "wilcoxon_p": 4.320463057827488e-08
+    },
+    "stationary p=0.10|160": {
+      "updates": 0.0,
+      "diff": 6.0,
+      "ci_low": 6.0,
+      "ci_high": 6.0,
+      "wilcoxon_p": 4.320463057827488e-08
+    }
+  }
+}
